@@ -2,6 +2,11 @@ using System;
 
 class Program
 {
+
+    static double AddNumbers(double a, double b)
+    {
+        return a + b;
+    }
     static void Main(string[] args)
     {
         // //Console.WriteLine("Hello Sandbox World!");
@@ -20,8 +25,13 @@ class Program
         //     Console.WriteLine("x is 10");
         // }
 
-        Console.WriteLine("Hey how are you? ");
+        // Console.WriteLine("Hey how are you? ");
 
-        Console.WriteLine("Hey baby how you doin? ");
+        // Console.WriteLine("Hey baby how you doin? ");
+
+        double total = AddNumbers(123.90, 985.12356);
+        Console.WriteLine(total);
+
+
     }
 }
