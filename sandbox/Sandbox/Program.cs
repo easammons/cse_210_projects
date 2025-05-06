@@ -3,9 +3,38 @@ using System;
 class Program
 {
 
-    static double AddNumbers(double a, double b)
+    // static double AddNumbers(double a, double b)
+    // {
+    //     return a + b;
+    // }
+
+
+    class Circle 
     {
-        return a + b;
+
+        private double _radius;
+
+        public void SetRadius(double radius)
+        {
+            if (radius < 0)
+            {
+                Console.WriteLine("error, radius must > 0");
+                return;
+            }
+            _radius = radius;
+        }
+
+        public double GetRadius()
+        {
+            return _radius;
+        }
+
+
+        public double GetArea()
+        {
+            return Math.PI*_radius*_radius;
+        }
+
     }
     static void Main(string[] args)
     {
@@ -29,8 +58,8 @@ class Program
 
         // Console.WriteLine("Hey baby how you doin? ");
 
-        double total = AddNumbers(123.90, 985.12356);
-        Console.WriteLine(total);
+        // double total = AddNumbers(123.90, 985.12356);
+        // Console.WriteLine(total);
 
         // bool done = false;
         // while(done)
@@ -39,5 +68,12 @@ class Program
         //     done = true;
         // }
 
+        //Console.WriteLine("Hello World!");
+
+
+        Circle myCircle = new Circle();
+        myCircle.SetRadius(10);
+        Console.WriteLine($"{myCircle.GetRadius()}");
+        Console.WriteLine($"{myCircle.GetArea()}");
     }
 }
