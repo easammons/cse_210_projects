@@ -27,7 +27,7 @@ class Journal
 
         string txt = string.Join(" ", args);
         string date = Entry.GetDate();
-        string entry = string.Concat(date, txt);
+        string entry = $"{date} - {txt}";
         return (entry);
     }
 

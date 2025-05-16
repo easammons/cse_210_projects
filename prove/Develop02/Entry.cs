@@ -33,18 +33,53 @@ class Entry
 
      public static void SaveToFile()
     {
-        Console.Write("Enter filename to save journal (e.g., journal.txt): ");
+        Console.Write("Enter filename to save journal (e.g., journal.csv): ");
         string filename = Console.ReadLine();
 
-        try
+    try
+    {
+        using (StreamWriter writer = new StreamWriter(filename))
         {
-            File.WriteAllLines(filename, entries);
-            Console.WriteLine($"Journal saved to {filename}");
+            writer.WriteLine("\"Date\",\"Prompt\",\"Entry\""); // CSV Header
+
+            foreach (var entry in entries)
+            {
+                string[] parts = entry.Split(new[] { "\n" }, StringSplitOptions.None);
+
+                string prompt = "", content = "", date = "";
+
+                foreach (string line in parts)
+                {
+                    if (line.StartsWith("Prompt: "))
+                        prompt = line.Substring(8);
+                    else if (line.StartsWith("Entry: "))
+                    {
+                        string full = line.Substring(7);
+                        date = full.Substring(0, full.IndexOf(' '));
+                        content = full.Substring(full.IndexOf(' ') + 1);
+                    }
+                }
+
+                writer.WriteLine($"{EscapeForCsv(date)},{EscapeForCsv(prompt)},{EscapeForCsv(content)}");
+            }
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error saving file: " + ex.Message);
-        }
+
+        Console.WriteLine($"Journal saved to {filename}");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Error saving file: " + ex.Message);
+    }
+    }
+
+    private static string EscapeForCsv(string input)
+    {
+        if (string.IsNullOrEmpty(input))
+            return "\"\"";
+
+        // Escape quotes by doubling them, and wrap in quotes
+        string escaped = input.Replace("\"", "\"\"");
+        return $"\"{escaped}\"";
     }
     
     public static void LoadFromFile()
