@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter", "WordCounter\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSE210TestApp3", "CSE210TestApp3\CSE210TestApp3.csproj", "{2BFEC202-7DA2-424F-8F10-1677D3D6F992}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person", "Person\Person.csproj", "{8651D52D-654B-4FC3-AB19-51E73D5F3082}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,10 @@ Global
 		{2BFEC202-7DA2-424F-8F10-1677D3D6F992}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BFEC202-7DA2-424F-8F10-1677D3D6F992}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BFEC202-7DA2-424F-8F10-1677D3D6F992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8651D52D-654B-4FC3-AB19-51E73D5F3082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8651D52D-654B-4FC3-AB19-51E73D5F3082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8651D52D-654B-4FC3-AB19-51E73D5F3082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8651D52D-654B-4FC3-AB19-51E73D5F3082}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
