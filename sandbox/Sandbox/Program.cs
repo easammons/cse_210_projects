@@ -14,6 +14,8 @@ class Program
     {
         // //Console.WriteLine("Hello Sandbox World!");
 
+
+        int index = 0;
         int duration = 9;
         DateTime currentTime = DateTime.Now;
         DateTime endTime = currentTime.AddSeconds(duration);
@@ -21,17 +23,27 @@ class Program
         int count = duration;
 
         string animationString = "(^_^)(-_-)";
+        string animationString2 = "\\|/-";
+
+        // while (DateTime.Now < endTime)
+        // {
+        //     Console.Write(animationString[0..5]));
+        //     Thread.Sleep(sleepTime);
+        //     Console.Write("\b\b\b\b\b");
+        //     Console.Write(animationString[5..]);
+        //     Thread.Sleep(sleepTime);
+        //     Console.Write("\b\b\b\b\b");
+
+        // }
 
         while (DateTime.Now < endTime)
         {
-            Console.Write(animationString[0..5]);
+            Console.Write(animationString2[index++ % animationString2.Length]);
             Thread.Sleep(sleepTime);
-            Console.Write("\b\b\b\b\b");
-            Console.Write(animationString[5..]);
-            Thread.Sleep(sleepTime);
-            Console.Write("\b\b\b\b\b");
+            Console.Write("\b");
 
         }
+        
         
 
         while (DateTime.Now < endTime)
