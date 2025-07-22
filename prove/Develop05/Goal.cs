@@ -1,16 +1,21 @@
 
-public class Goal
+abstract class Goal
 {
-    private string _name;
-    private string _description;
-    private int _point;
+    protected string name;
+    protected string description;
+    protected int points;
 
-    public Goal(string name, string description, int point)
+    public Goal(string name, string description, int points)
     {
-        _name = name;
-        _description = description;
-        _point = point;
+        this.name = name;
+        this.description = description;
+        this.points = points;
     }
 
-    
+    public abstract bool IsComplete();
+    public abstract int RecordEvent();
+    public abstract string GetStatus();
+    public abstract string Serialize();
+    public abstract void Deserialize(string data);
+    public abstract string GetName();
 }

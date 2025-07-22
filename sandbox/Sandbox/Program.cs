@@ -7,66 +7,95 @@ class Program
     // {
     //     return a + b;
     // }
-
+    static void TestByRef(int x, ref string n)
+    {
+        x++;
+        n += " Plus Betty";
+        Console.WriteLine($"In TestByRef: {x}, {n}");
+    }
 
 
     static void Main(string[] args)
     {
-        // //Console.WriteLine("Hello Sandbox World!");
+        Console.WriteLine("Hello Sandbox World!");
+
+        int? x = null;
+        string name = "Betty";
+
+        int y = x ?? 29;
+        Console.WriteLine(y);
+
+        name ??= "Bob";
+        Console.WriteLine(name);
+
+        string myName = null;
+        int? length = myName?.Length;
+        Console.WriteLine(length);
+
+        int bobsAge = 23;
+        int bettysAge = 31;
+        string whoIsOlder = bobsAge > bettysAge ? "Bob is older" : "Betty is older";
+        Console.WriteLine(whoIsOlder);
 
 
-        int index = 0;
-        int duration = 9;
-        DateTime currentTime = DateTime.Now;
-        DateTime endTime = currentTime.AddSeconds(duration);
-        int sleepTime = 250;
-        int count = duration;
+        // int z = 10;
+        // string name = "Bob";
 
-        string animationString = "(^_^)(-_-)";
-        string animationString2 = "\\|/-";
+            // TestByRef(z, ref name);
+            // Console.WriteLine($"In main: {z}, {name}");
 
-        // while (DateTime.Now < endTime)
-        // {
-        //     Console.Write(animationString[0..5]));
-        //     Thread.Sleep(sleepTime);
-        //     Console.Write("\b\b\b\b\b");
-        //     Console.Write(animationString[5..]);
-        //     Thread.Sleep(sleepTime);
-        //     Console.Write("\b\b\b\b\b");
+            // int index = 0;
+            // int duration = 9;
+            // DateTime currentTime = DateTime.Now;
+            // DateTime endTime = currentTime.AddSeconds(duration);
+            // int sleepTime = 250;
+            // int count = duration;
 
-        // }
+            // string animationString = "(^_^)(-_-)";
+            // string animationString2 = "\\|/-";
 
-        while (DateTime.Now < endTime)
-        {
-            Console.Write(animationString2[index++ % animationString2.Length]);
-            Thread.Sleep(sleepTime);
-            Console.Write("\b");
+            // // while (DateTime.Now < endTime)
+            // // {
+            // //     Console.Write(animationString[0..5]));
+            // //     Thread.Sleep(sleepTime);
+            // //     Console.Write("\b\b\b\b\b");
+            // //     Console.Write(animationString[5..]);
+            // //     Thread.Sleep(sleepTime);
+            // //     Console.Write("\b\b\b\b\b");
 
-        }
-        
-        
+            // // }
 
-        while (DateTime.Now < endTime)
-        {
-            Console.Write(count--);
-            Thread.Sleep(1000);
-            Console.Write("\b");
+            // while (DateTime.Now < endTime)
+            // {
+            //     Console.Write(animationString2[index++ % animationString2.Length]);
+            //     Thread.Sleep(sleepTime);
+            //     Console.Write("\b");
 
-        }
+            // }
 
-        while (DateTime.Now < endTime)
-            {
-                Console.Write("+");
-                Thread.Sleep(sleepTime);
-                Console.Write("\b");
-                Console.Write("-");
-                Thread.Sleep(sleepTime);
-                Console.Write("\b");
-            }
 
-        // Console.WriteLine("Input your first name: ");
-        // string firstName = Console.ReadLine();
-        // Console.WriteLine($"Your first name is: {firstName}");
+
+            // while (DateTime.Now < endTime)
+            // {
+            //     Console.Write(count--);
+            //     Thread.Sleep(1000);
+            //     Console.Write("\b");
+
+            // }
+
+            // while (DateTime.Now < endTime)
+            //     {
+            //         Console.Write("+");
+            //         Thread.Sleep(sleepTime);
+            //         Console.Write("\b");
+            //         Console.Write("-");
+            //         Thread.Sleep(sleepTime);
+            //         Console.Write("\b");
+            //     }
+
+            // Console.WriteLine("Input your first name: ");
+            // string firstName = Console.ReadLine();
+            // Console.WriteLine($"Your first name is: {firstName}");
 
             // Console.WriteLine("Input your last name: ");
             // string lastName = Console.ReadLine();
